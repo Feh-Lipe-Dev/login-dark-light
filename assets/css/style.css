@@ -29,10 +29,11 @@
 #container {
   height: 100vh;
   width: 100%;
-  background: var(--color-gradient-light);  
+  background: var(--color-gradient-light);
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: container-dark .3s ease-in-out;
 }
 
 #login_form {
@@ -66,6 +67,7 @@
   height: 3px;
   bottom: 10px;
   border-radius: 5px;
+  transition: all .3s ease-in-out;
 }
 
 #mode_icon {
@@ -106,7 +108,8 @@
   gap: 15px;
   padding: 3px;
   cursor: text;
-  border-bottom: 1px solid var(--color-purple-50);
+  border-bottom: 1px solid var(--color-yellow-200);
+  transition: all .3s ease-in-out;
 }
 
 .input-field i {
@@ -133,18 +136,20 @@
 }
 
 #forgot_password a:hover {
-  color: var(--color-purple-50);
+  color: var(--color-yellow-200);
 }
 
 #login_button {
   border: none;
   background: var(--color-gradient-light);
-  color: var(--color-light-50);
+  color: var(--color-dark-100);
   padding: 7px;
   font-size: 18px;
   border-radius: 3px;
   font-weight: bold;
   cursor: pointer;
+  animation: container-dark .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 #login_button:hover {
@@ -157,6 +162,11 @@
   animation: light-to-dark 0.3s ease-in-out;
 }
 
+.dark#login_form .input-field {
+  border-bottom: 1px solid var(--color-purple-50);
+  transition: all .3s ease-in-out;
+}
+
 .dark#login_form .input-field input,
 .dark#login_form .input-field i {
   color: var(--color-light-50);
@@ -164,10 +174,23 @@
 
 .container-dark#container {
   background: var(--color-gradient-dark);
+  animation: container-dark .3s ease-in-out;
 }
 
 .dark-button#login_button {
+  color: var(--color-light-50);
+  transition: all .3s ease-in-out;
   background: var(--color-gradient-dark);
+  animation: container-dark .3s ease-in-out;
+}
+
+.dark#forgot_password a:hover {
+  color: var(--color-purple-100);
+}
+
+.dark#form_header h1::before {
+  background-color: var(--color-purple-50);
+  transition: all .3s ease-in-out;
 }
 
 @keyframes dark-to-light {
@@ -205,4 +228,3 @@
     background: var(--color-gradient-light);
   }
 }
-
